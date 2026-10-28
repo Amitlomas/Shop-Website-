@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Radhika Butique & Ladies Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff8fb;--surface:#fff;--ink:#2b1233;--muted:#6d5a76;--brand:#8a1e63;--brand2:#ff5c8a;--on-brand:#fff;--line:#f0dbe8;
+  --t1:#ffd6e5;--t2:#ffe9a8;--t3:#c9f1e3;--t4:#d4e4ff;--t5:#e5d7fb;
+  --hero:linear-gradient(135deg,#ffd6e5 0%,#e5d7fb 55%,#d4e4ff 100%);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a0e20;--surface:#271633;--ink:#f8ecf5;--muted:#c2abcc;--brand:#ff8fb8;--brand2:#ff5c8a;--on-brand:#2b1233;--line:#3c2548;
+  --t1:#5b2a49;--t2:#5a4a1a;--t3:#1e4a3b;--t4:#243f66;--t5:#412a60;--hero:linear-gradient(135deg,#3b1d4a,#2a1840 60%,#1d2a52);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a0e20;--surface:#271633;--ink:#f8ecf5;--muted:#c2abcc;--brand:#ff8fb8;--brand2:#ff5c8a;--on-brand:#2b1233;--line:#3c2548;
+  --t1:#5b2a49;--t2:#5a4a1a;--t3:#1e4a3b;--t4:#243f66;--t5:#412a60;--hero:linear-gradient(135deg,#3b1d4a,#2a1840 60%,#1d2a52);color-scheme:dark}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1120px;margin:0 auto;padding:10px 20px}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--brand);text-decoration:none;font-size:1.05rem;line-height:1.15}
+.nav{display:flex;align-items:center;gap:8px}
+.nav a.l{padding:8px 12px;text-decoration:none;font-weight:700;color:var(--muted);border-radius:999px}
+.nav a.l:hover{color:var(--ink)}
+.shopbtn{background:var(--brand);color:var(--on-brand);border:0;border-radius:999px;padding:10px 18px;font-weight:700}
+#menu{position:absolute;left:0;right:0;top:100%;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(60,10,60,.12);max-height:calc(100vh - 80px);overflow:auto}
+#menu[hidden]{display:none}
+.mg{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;max-width:1120px;margin:0 auto;padding:24px 20px 28px}
+.mg h3{font-size:1rem;margin-bottom:8px}
+.mg h3 a{text-decoration:none;color:var(--brand)}
+.mg ul{list-style:none;margin:0;padding:0}
+.mg li a{display:flex;align-items:center;gap:10px;padding:5px 0;text-decoration:none;color:var(--muted);font-size:.95rem}
+.mg li a:hover{color:var(--ink);text-decoration:underline}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;background:var(--brand);color:var(--on-brand);border:2px solid var(--brand)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn[hidden]{display:none}
+.hero{background:var(--hero);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1{font-size:clamp(2.3rem,6vw,4.3rem);font-weight:800;color:var(--brand)}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:32em;margin:16px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.bub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bub a{aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:.82rem;text-align:center;line-height:1.2;box-shadow:0 8px 20px rgba(80,20,80,.12);color:var(--ink)}
+.bub a span{font-size:2.1rem;line-height:1.1}
+.bub a:nth-child(1){background:var(--t1)}.bub a:nth-child(2){background:var(--t2);transform:translateY(18px)}.bub a:nth-child(3){background:var(--t3)}
+.bub a:nth-child(4){background:var(--t4);transform:translateY(-6px)}.bub a:nth-child(5){background:var(--t5);transform:translateY(12px)}.bub a:nth-child(6){background:var(--surface);border:2px dashed var(--brand2)}
+section{padding:48px 0}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:8px}
+.lead{color:var(--muted);margin:0 0 22px;max-width:36em}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:22px}
+.chip{border:2px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:700}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+#q{flex:1 1 200px;min-width:0;border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.item .pic{height:140px;display:flex;align-items:center;justify-content:center;font-size:3.6rem}
+.item .tx{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.item h3{font-size:1.08rem}
+.item small{color:var(--muted)}
+.item .ask{margin-top:auto;padding-top:10px;font-weight:700;color:var(--brand);text-decoration:none}
+.item.hit{outline:3px solid var(--brand2);outline-offset:2px}
+.none{color:var(--muted);padding:20px 0}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px}
+.box h3{font-size:1.25rem;margin-bottom:10px}.box p{margin:0 0 6px}.muted{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--muted);font-size:.92rem}
+@media (max-width:860px){.mg{grid-template-columns:repeat(2,1fr)}.hero .wrap{grid-template-columns:1fr;padding-top:34px;padding-bottom:40px}.bub{max-width:420px}.visit{grid-template-columns:1fr}.nav a.l{display:none}}
+@media (max-width:420px){.logo{font-size:.92rem}.mg{grid-template-columns:1fr}.items{grid-template-columns:repeat(2,1fr);gap:12px}.item .pic{height:110px;font-size:3rem}}
+/* shop name */
+.logo{display:flex;align-items:center;gap:10px}
+.lm{width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font:800 1.35rem "Bricolage Grotesque",sans-serif;box-shadow:0 4px 10px rgba(138,30,99,.35)}
+.ln{font:800 1.18rem/1.05 "Bricolage Grotesque",sans-serif;color:var(--brand)}
+.ln small{display:block;margin-top:3px;font:700 .78rem/1.1 "Nunito Sans",sans-serif;color:var(--ink);opacity:.8}
+.nameplate{position:relative;overflow:hidden;display:inline-block;margin:0 0 20px;padding:18px 28px 20px;border-radius:26px;background:var(--surface);border:3px solid var(--brand);box-shadow:8px 8px 0 var(--brand2);transform:rotate(-1.5deg)}
+.np1{display:block;font:800 clamp(2.1rem,7vw,3.8rem)/1 "Bricolage Grotesque",sans-serif;color:var(--brand);letter-spacing:-.02em}
+.np2{display:block;margin-top:8px;font:700 clamp(1.1rem,3.2vw,1.65rem)/1.1 "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.nameplate::after{content:"";position:absolute;top:0;bottom:0;left:-120px;width:70px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);animation:shine 4.5s ease-in-out 1.2s infinite}
+@keyframes shine{0%,55%{left:-120px}100%{left:120%}}
+.hero .tag{font-size:clamp(1.35rem,3.4vw,2.1rem);font-weight:800;color:var(--ink);margin:0}
+@media (max-width:420px){.ln{font-size:1rem}.ln small{font-size:.7rem}.lm{width:36px;height:36px;font-size:1.15rem}.nameplate{padding:14px 18px 16px;box-shadow:6px 6px 0 var(--brand2)}}
+/* item pages */
+.item h3 a{text-decoration:none}
+.pic.v svg{filter:hue-rotate(var(--h,0deg));transition:transform .35s}
+.item:hover .pic.v svg{transform:scale(1.15) rotate(-6deg)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.pg{padding-bottom:54px}.pg h2{font-size:1.5rem;margin:36px 0 14px}
+.crumb{font-size:.92rem;color:var(--muted);padding-top:22px}.crumb a{text-decoration:none;color:var(--brand);font-weight:700}
+.ban{display:flex;gap:24px;align-items:center;border-radius:28px;padding:26px 30px;margin:14px 0 28px;animation:slide .6s cubic-bezier(.2,.8,.2,1) backwards}
+.ban h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:var(--ink)}
+.ban p{margin:8px 0 0;color:var(--ink);opacity:.85;max-width:32em}
+.bi svg{width:112px;height:112px;display:block}
+@media (max-width:520px){.ban{padding:20px;gap:16px}.bi svg{width:72px;height:72px}}
+/* animation */
+@keyframes slide{from{opacity:0;transform:translateX(-44px)}}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}}
+@keyframes bob{50%{translate:0 -9px}}
+@keyframes mq{to{transform:translateX(-50%)}}
+.hero .wrap>div:first-child>*{animation:slide .7s cubic-bezier(.2,.8,.2,1) backwards}
+.hero .wrap>div:first-child>p{animation-delay:.12s}
+.hero .wrap>div:first-child>.cta{animation-delay:.24s}
+.bub a{transition:scale .25s,box-shadow .25s;animation:bob 4.5s ease-in-out infinite}
+.bub a:nth-child(2n){animation-delay:-1.5s}.bub a:nth-child(3n){animation-delay:-3s}
+.bub a:hover{scale:1.1;box-shadow:0 14px 28px rgba(80,20,80,.22);animation-play-state:paused}
+.btn,.shopbtn,.chip{transition:transform .2s,box-shadow .2s,background-color .2s,color .2s}
+.btn:hover,.shopbtn:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(138,30,99,.28)}
+.btn.alt:hover{background:var(--ink);color:var(--bg)}
+.chip:hover{transform:translateY(-2px);border-color:var(--brand)}
+#menu:not([hidden]) .mg{animation:drop .3s ease}
+.mg li a{transition:padding .2s,color .2s}.mg li a:hover{padding-left:8px}
+.mq{overflow:hidden;background:var(--brand);color:var(--on-brand);padding:13px 0}
+.mq .tr{display:flex;width:max-content;animation:mq 30s linear infinite}
+.mq:hover .tr{animation-play-state:paused}
+.mq span{padding:0 26px;white-space:nowrap;font:800 1.05rem "Bricolage Grotesque",sans-serif}
+.item{transition:transform .25s,box-shadow .25s;animation:rise .55s ease backwards;animation-delay:var(--d,0ms)}
+.item:hover{transform:translateY(-8px);box-shadow:0 18px 30px rgba(90,20,90,.18)}
+.item .pic span{display:inline-block;transition:transform .35s}.pic svg{width:92px;height:92px;display:block}.th{width:34px;height:34px;flex:none;border-radius:10px;padding:3px}.th svg{width:100%;height:100%;display:block}@media (max-width:420px){.pic svg{width:72px;height:72px}}
+.item:hover .pic span{transform:scale(1.25) rotate(-8deg)}
+.item .ask{transition:letter-spacing .2s}.item .ask:hover{letter-spacing:.03em}
+.box{transition:box-shadow .25s}.box:hover{box-shadow:0 14px 28px rgba(90,20,90,.14)}
+.rv{opacity:0;transform:translateX(-36px);transition:opacity .6s ease,transform .6s ease}
+.rv.r2{transform:translateX(36px)}
+.rv.in{opacity:1;transform:none}
+.pi{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:4px}
+.row{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px}
+.row>span:last-child,.row>a{padding-top:7px}
+.pin{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--t1);color:var(--brand);font-size:1.2rem}
+.pin .pi{width:22px;height:22px;margin:0;vertical-align:0}
+.row a{font-weight:800;font-size:1.15rem;color:var(--brand);text-decoration:none}
+footer a{color:var(--brand);font-weight:700;text-decoration:none}
+/* name + cosmetic animation */
+.hero .wrap{position:relative;z-index:1}
+.npw{position:relative;display:inline-block;margin:8px 0 24px;padding:18px 30px 20px 26px}
+.nameplate{margin:0;padding:12px 22px 14px;border:0;border-radius:18px;transform:none;text-align:left;background:linear-gradient(100deg,#5b0f3a,#b4123f,#e8452c,#b4123f,#5b0f3a);background-size:260% 100%;animation:flow 6s linear infinite;box-shadow:0 10px 24px rgba(194,24,91,.35),inset 0 1px 0 rgba(255,255,255,.35)}
+.np1{font-size:clamp(1.5rem,5vw,2.3rem);color:#fff}
+.np2{margin-top:4px;font-size:clamp(.85rem,2.4vw,1.05rem);color:#ffe9a8;letter-spacing:.04em}
+@keyframes flow{to{background-position:260% 0}}
+.fl .f{position:absolute;width:44px;height:44px;filter:drop-shadow(0 6px 6px rgba(80,20,80,.3));animation:fy 3.6s ease-in-out infinite}
+.fl .f svg{width:100%;height:100%;display:block}
+.f1{left:-4px;top:-8px;rotate:-18deg}
+.f2{left:-6px;bottom:-6px;rotate:12deg;animation-delay:-.8s!important}
+.f3{right:-4px;top:-12px;rotate:14deg;animation-delay:-1.6s!important}
+.f4{right:-8px;bottom:-8px;rotate:-10deg;animation-delay:-2.4s!important}
+.f5{left:46%;top:-20px;rotate:24deg;width:38px!important;height:38px!important;animation-delay:-3s!important}
+@keyframes fy{50%{translate:0 -9px}}
+.sp{position:absolute;color:#f2b632;font-size:1rem;animation:tw 2.2s ease-in-out infinite}
+.s1{left:24%;bottom:-8px}.s2{right:26%;top:-6px;animation-delay:-.7s}.s3{right:-12px;top:44%;font-size:.8rem;animation-delay:-1.4s}
+@keyframes tw{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1.3)}}
+.hf{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hf i{position:absolute;width:38px;height:38px;opacity:0;animation:rise2 14s linear infinite}
+.hf svg{width:100%;height:100%;display:block}
+@keyframes rise2{0%{translate:0 0;rotate:0deg;opacity:0}15%{opacity:.5}85%{opacity:.5}100%{translate:30px -720px;rotate:220deg;opacity:0}}
+.lm{background:var(--t1);padding:6px;box-shadow:0 4px 10px rgba(138,30,99,.25)}
+.lm svg{width:100%;height:100%;display:block}
+@keyframes wig{25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+.logo:hover .lm svg{animation:wig .6s ease}
+@media (max-width:420px){.npw{padding:16px 24px 18px 20px}.fl .f{width:36px;height:36px}.f5{width:32px!important;height:32px!important}}
+/* buy-focused colours */
+:root{--bg:#fff5f2;--brand:#8e0f3c;--line:#f3d9d6;--t1:#ffd9e2;--t2:#ffe6a1;--t3:#c9f0df;--t4:#d6e6ff;--t5:#ecd9ff;--hero:linear-gradient(135deg,#ffd9e2 0%,#ffe7c2 55%,#ffd0c6 100%);--cta1:#d6174a;--cta2:#ee4a2b}
+.ann{background:linear-gradient(90deg,#5b0f3a,#b4123f,#e8452c);color:#fff;text-align:center;font-weight:700;font-size:.9rem;padding:9px 14px}
+.ann[hidden]{display:none}
+.btn:not(.alt):not(.gold),.shopbtn{background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff;border-color:transparent}
+.btn.gold{background:linear-gradient(135deg,#ffc233,#ff9f1c);color:#2b1233;border-color:transparent}
+.btn:not(.alt):hover,.shopbtn:hover{box-shadow:0 12px 24px rgba(214,23,74,.4)}
+.cta .btn:first-child{position:relative}
+.cta .btn:first-child::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:ring 2.6s ease-out infinite;pointer-events:none}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(214,23,74,.55)}70%,100%{box-shadow:0 0 0 16px rgba(214,23,74,0)}}
+.chip[aria-pressed="true"]{background:linear-gradient(135deg,var(--cta1),var(--cta2));border-color:transparent;color:#fff}
+.item .tx>small{padding-bottom:10px}
+.item .ask{display:block;margin-top:auto;padding:11px 12px;border-radius:12px;text-align:center;background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff;font-weight:800;letter-spacing:0}
+.item .ask:hover{letter-spacing:0;filter:brightness(1.08)}
+.item .ask.muted{background:var(--t1);color:var(--ink)}
+#grid .ask{background:transparent;color:var(--brand);border:2px solid var(--brand);padding:9px 12px}
+#grid .ask:hover{background:var(--brand);color:#fff;filter:none}
+#tabcall{background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff}
+.trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0 8px}
+.trust span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.92rem}
+.help{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:28px;padding:22px 24px;border-radius:24px;background:linear-gradient(120deg,#ffe7c2,#ffd9e2);color:#2b1233}
+.help h3{font-size:1.25rem}.help p{margin:4px 0 0}
+.fab{position:fixed;right:22px;bottom:22px;z-index:55;display:flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff;font-weight:800;text-decoration:none;box-shadow:0 12px 26px rgba(214,23,74,.45);animation:fy 3s ease-in-out infinite}
+.fab[hidden]{display:none}
+@media (max-width:860px){.fab{display:none!important}}
+/* list, sections, language */
+.lang{border:2px solid var(--brand);background:transparent;color:var(--brand);border-radius:999px;padding:8px 14px;font-weight:800}
+.lbtn{position:fixed;right:22px;bottom:90px;z-index:56;border:0;border-radius:999px;padding:12px 18px;background:var(--ink);color:var(--bg);font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:80;background:var(--surface);box-shadow:-12px 0 30px rgba(0,0,0,.25);padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px));overflow:auto;animation:slide .3s ease}
+.drawer[hidden]{display:none}
+.dh{display:flex;justify-content:space-between;align-items:center}
+.dh h2{margin:0}
+.dh button{border:0;background:var(--t1);width:44px;height:44px;border-radius:50%;font-size:1.1rem;color:var(--ink)}
+.drawer h3{margin:20px 0 8px;font-size:1.1rem}
+.drawer ul{list-style:none;margin:0;padding:0}
+.drawer li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.drawer li.e{color:var(--muted)}
+.drawer li button{border:0;background:none;font-size:1.1rem;color:var(--muted);min-width:44px;min-height:44px}
+.dact{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.pic{position:relative}
+.hrt{position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#d6174a;font-size:1.3rem;line-height:1}
+.hrt.on{background:#d6174a;color:#fff}
+.add{border:2px solid var(--brand);background:transparent;color:var(--brand);border-radius:12px;padding:8px 10px;font-weight:800;margin-top:6px}
+.add.on{background:var(--brand);color:var(--on-brand)}
+.pr{font-weight:800;color:var(--brand)}.pr.nope{font-weight:600;color:var(--muted);font-size:.9rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.oc,.rc{border:1px solid var(--line);border-radius:22px;padding:20px;background:var(--surface)}
+.oc{background:linear-gradient(135deg,#ffe7c2,#ffd9e2);color:#2b1233}
+.oc h3,.rc h3{font-size:1.2rem;margin-bottom:6px}.oc p,.rc p{margin:0 0 6px}
+.stars{color:#f2b632;letter-spacing:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px}
+.sh{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.qrw{text-align:center}.qrw small{display:block;margin-top:8px;color:var(--muted)}
+#qr{display:inline-block;padding:10px;background:#fff;border-radius:14px}
+a.item{text-decoration:none;color:inherit}
+@media (max-width:860px){.lbtn{right:14px;bottom:calc(84px + env(safe-area-inset-bottom,0px));padding:11px 16px}}
+@media (max-width:520px){.shopbtn{display:none}}
+.age{display:inline-block;align-self:flex-start;background:var(--t2);color:#2b1233;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:800}
+.item[hidden]{display:none}
+.two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.slot{margin:0}
+.slot>span,.slot>img{display:grid;place-items:center;text-align:center;width:100%;aspect-ratio:4/3;border-radius:18px;object-fit:cover}
+.slot>span{border:2px dashed var(--line);color:var(--muted);background:var(--surface)}
+.slot figcaption{margin-top:6px;font-weight:700}
+/* mobile app layout */
+.tabs,.tg{display:none}
+@media (max-width:860px){
+ body{padding-bottom:76px}
+ .shopbtn{padding:9px 14px;font-size:.88rem}
+ #menu{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 62px);bottom:calc(66px + env(safe-area-inset-bottom,0px));max-height:none;box-shadow:none;border:0;overscroll-behavior:contain}
+ .mg{grid-template-columns:1fr;gap:0;padding:6px 16px 28px}
+ .mg>div{border-bottom:1px solid var(--line);padding:4px 0}
+ .mg h3{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0;font-size:1.1rem}
+ .mg h3 a{flex:1;padding:12px 0}
+ .tg{display:grid;place-items:center;flex:none;width:44px;height:44px;border:0;border-radius:50%;background:var(--t1);font-size:1.1rem;transition:transform .25s}
+ .mg>div.open .tg{transform:rotate(180deg)}
+ .mg ul{display:none;padding:0 0 12px}
+ .mg>div.open ul{display:block}
+ .mg li a{min-height:48px;font-size:1rem}
+ .tabs{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--surface);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 18px rgba(60,10,60,.08)}
+ .tabs a,.tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:50px;padding:4px 0;border:0;background:none;border-radius:14px;font:700 .72rem "Nunito Sans",sans-serif;color:var(--muted);text-decoration:none}
+ .tabs span{font-size:1.35rem;line-height:1}
+ .tabs a:active,.tabs button:active{background:var(--t1);color:var(--ink)}
+ #tabmenu{color:var(--brand)}
+}
+@media (max-width:560px){
+ .wrap{padding:0 16px}
+ section{padding:36px 0}
+ .items{grid-template-columns:repeat(2,1fr);gap:12px}
+ .item .pic{height:118px}.pic svg{width:76px;height:76px}
+ .item .tx{padding:12px 12px 16px}.item h3{font-size:1rem}
+ #q{order:-1;flex:1 1 100%}
+ .chip{min-height:44px}
+ .cta .btn{flex:1 1 100%;text-align:center}
+ .hero .wrap{gap:24px}
+ .box{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.mq{overflow-x:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="ann" id="ann" hidden></div>
+<header>
+  <div class="bar">
+    <a class="logo" href="#top" aria-label="Radhika Butique & Ladies Collection, home"><span class="lm" aria-hidden="true">R</span><span class="ln">Radhika Butique<small>& Ladies Collection</small></span></a>
+    <div class="nav">
+      <a class="l" href="#items">All items</a>
+      <a class="l" href="#visit">Visit us</a>
+      <button class="lang" id="lang" type="button">हिन्दी</button><button class="shopbtn" id="shopbtn" aria-expanded="false" aria-controls="menu">Shop items ▾</button>
+    </div>
+  </div>
+  <div id="menu" hidden><div class="mg" id="mg"></div></div>
+</header>
+
+<main id="top">
+  <div class="hero"><div class="hf" id="hf" aria-hidden="true"></div><div class="wrap">
+    <div>
+      <div class="npw"><div class="nameplate" role="heading" aria-level="1"><span class="np1">Radhika Butique</span><span class="np2">& Ladies Collection</span></div><div class="fl" id="fl" aria-hidden="true"></div></div>
+      <h2 class="tag">Everything for her, the little ones and your home.</h2>
+      <p>Cosmetics, kids’ toys and slippers, ladies’ shoes and slippers, and decoration pieces. Come in and find it all under one roof.</p>
+      <div class="cta">
+        <a class="btn" href="#items">Browse items</a>
+        <a class="btn alt" id="dir" href="#visit"><svg class="pi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5.200 7 13 7 13s7-7.800 7-13a7 7 0 0 0-7-7zm0 9.500a2.500 2.500 0 1 1 0-5 2.500 2.500 0 0 1 0 5z"/></svg> Get directions</a>
+        <a class="btn gold" id="call" href="#visit" hidden>📞 Call the shop</a>
+      </div>
+    </div>
+    <div class="bub" id="bub"></div>
+  </div></div>
+
+  <div class="wrap"><div class="trust"><span>🛍️ Everything under one roof</span><span>📍 Near Hanuman Mandir, Kultaran Tirth</span><span>📞 Call before you visit</span></div></div>
+
+  <div class="mq" aria-hidden="true"><div class="tr" id="tr"></div></div>
+
+  <section id="gifts" hidden><div class="wrap"><h2>🎁 Gift ideas</h2><p class="lead">Ideas for gifts. Tell us your budget and we’ll help you choose.</p><div class="grid3" id="giftG"></div><p style="margin-top:18px"><a class="btn" id="giftBtn" target="_blank" rel="noopener" href="#visit">🎁 Ask us to make a gift set</a></p></div></section>
+  <section id="items"><div class="wrap">
+    <h2>Our items</h2>
+    <p class="lead">A look at what you’ll find in the shop. Ask us about any item, or about things not listed here.</p>
+    <div class="tools"><div id="chips" style="display:contents"></div><input id="q" type="search" placeholder="Search items" aria-label="Search items"></div>
+    <div class="items" id="grid"></div>
+    <p class="none" id="none" hidden>No items match. Try another word, or ask in the shop.</p>
+  </div></section>
+
+  <section id="offers" hidden><div class="wrap"><h2>Offers</h2><div class="grid3" id="offersG"></div></div></section>
+  <section id="newa" hidden><div class="wrap"><h2>New arrivals</h2><div class="items" id="newG"></div></div></section>
+  <section id="gal" hidden><div class="wrap"><h2>Photos of our shop</h2><div class="gal" id="galG"></div></div></section>
+  <section id="about"><div class="wrap"><h2>About us</h2><p class="lead" id="aboutT"></p><div class="box" id="delivB" hidden><h3>Home delivery</h3><p id="deliv" class="muted"></p></div></div></section>
+  <section id="tour"><div class="wrap"><h2>Shop tour</h2><p class="lead">Find us in VPO Kirmach, near Hanuman Mandir, Kultaran Tirth, Kurukshetra. Open the map, come to the temple, and you will find us nearby.</p><div class="tour" id="tourG"></div><a class="btn" id="tourMap" target="_blank" rel="noopener" href="#visit">Open in Google Maps</a></div></section>
+  <section id="visit"><div class="wrap">
+    <h2>Visit us</h2>
+    <p class="lead">Open the map for the fastest route to the shop.</p>
+    <div class="visit">
+      <div class="box"><h3>Find the shop</h3>
+        <p class="row"><span class="pin"><svg class="pi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5.200 7 13 7 13s7-7.800 7-13a7 7 0 0 0-7-7zm0 9.500a2.500 2.500 0 1 1 0-5 2.500 2.500 0 0 1 0 5z"/></svg></span><span id="addr" class="muted">Tap the button below to open the shop on Google Maps.</span></p>
+        <p class="row" id="phoneRow" hidden><span class="pin" aria-hidden="true">📞</span><a id="phone" href="#visit"></a></p>
+        <p style="margin-top:18px"><a class="btn" id="dir2" href="#visit"><svg class="pi" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5.200 7 13 7 13s7-7.800 7-13a7 7 0 0 0-7-7zm0 9.500a2.500 2.500 0 1 1 0-5 2.500 2.500 0 0 1 0 5z"/></svg> Open in Google Maps</a></p></div>
+      <div class="box"><h3>Opening hours</h3>
+        <p id="hours" class="muted">Hours will be added soon. Please call or message before you travel.</p>
+        <p id="openNow" style="font-weight:700"></p></div>
+    </div>
+  </div></section>
+<section id="rev" hidden><div class="wrap"><h2>What customers say</h2><div class="grid3" id="revG"></div></div></section>
+  <section id="refer"><div class="wrap"><div class="grid3 two">
+   <div class="box"><h3>Refer a friend</h3><p class="lead">Share our shop with a friend. When your friend shows this message in the shop, they get a small gift.</p><button class="btn" id="referBtn" type="button">Send to a friend on WhatsApp</button></div>
+   <div class="box"><h3>New stock updates</h3><p class="lead">Want to know when new stock arrives? Send us a message on WhatsApp and we’ll add you to our updates. We message only people who ask.</p><a class="btn gold" id="updBtn" target="_blank" rel="noopener" href="#visit">Tell me when new stock arrives</a></div>
+  </div></div></section>
+  <section id="share"><div class="wrap"><div class="box sh"><div><h2>Share with friends</h2><p class="lead">Send our website to family and friends, or scan the code with your phone.</p><div class="cta"><button class="btn" id="shareBtn" type="button">Share</button><a class="btn gold" id="rate" target="_blank" rel="noopener" href="#share">⭐ Rate us on Google</a></div></div><div class="qrw"><div id="qr"></div><small>Scan to open our website</small></div></div></div></section>
+</main>
+<div id="page" hidden></div>
+<footer><div class="wrap"><strong>Radhika Butique & Ladies Collection</strong><br><span id="fa"></span><br><a id="fp" href="#visit"></a><br>© <span id="yr"></span></div></footer>
+
+<button class="lbtn" id="lbtn" type="button" aria-label="My list">🛒 <b id="lcount">0</b></button>
+<aside class="drawer" id="drawer" hidden aria-label="My list"><div class="dh"><h2>My list</h2><button type="button" id="dclose" aria-label="Close">✕</button></div><div id="dbody"></div></aside>
+<a class="fab" id="fab" href="#visit" hidden>📞 Call now</a>
+<nav class="tabs" aria-label="Quick links">
+ <a href="#top"><span aria-hidden="true">🏠</span>Home</a>
+ <a href="#items"><span aria-hidden="true">🛍️</span>Items</a>
+ <button type="button" id="tabmenu" aria-controls="menu" aria-expanded="false"><span aria-hidden="true">☰</span>Menu</button>
+ <a href="#visit"><span aria-hidden="true">📍</span>Visit</a>
+ <a href="#visit" id="tabcall"><span aria-hidden="true">📞</span>Call</a>
+</nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// Edit SHOP and CATS to update the site. Leave a SHOP value empty to hide it.
+var SHOP={offer:"📍 Visit us for cosmetics, kids’ toys, footwear & décor, or call to check what’s in stock today.",phone:"+919896244225",whatsapp:"",address:"VPO Kirmach, Distt. Kurukshetra, Haryana 136119. Near Hanuman Mandir, Kultaran Tirth.",hours:"",open:null,maps:"https://maps.app.goo.gl/qcKEXR4Stb2VGx856"};
+// Sample items: replace with the shop's real stock. Each item is [name, emoji].
+var CATS=[
+ {id:"cosmetics",name:"Cosmetics",e:"💄",t:"t1",items:[["Lipsticks","💄"],["Nail polish","💅"],["Kajal & eyeliner","👁️"],["Foundation & compact","🪞"],["Face wash & creams","🧴"],["Perfumes & deodorants","🌸"]]},
+ {id:"toys",name:"Kids’ toys",e:"🧸",t:"t2",items:[["Soft toys","🧸"],["Building blocks","🧩"],["Cars & vehicles","🚗"],["Dolls","🪆"],["Board games","🎲"],["Musical toys","🥁"]]},
+ {id:"kidsslip",name:"Kids’ slippers",e:"🩴",t:"t3",items:[["Flip-flops","🩴"],["Kids’ sandals","👡"],["Indoor slippers","🧦"],["Casual shoes","👟"]]},
+ {id:"ladies",name:"Ladies’ shoes & slippers",e:"👠",t:"t4",items:[["Heels","👠"],["Flats","🥿"],["Sandals","👡"],["Daily slippers","🩴"],["Sports shoes","👟"],["Party footwear","✨"]]},
+ {id:"decor",name:"Decoration items",e:"🪔",t:"t5",items:[["Wall hangings","🖼️"],["Artificial flowers","💐"],["Candles & diyas","🪔"],["Photo frames","🖼️"],["Showpieces","🏺"],["Decorative lights","💡"]]}
+];
+// Fill these in to switch sections on. Empty lists stay hidden.
+var SITE={
+ site:"https://claude.ai/artifact/JM8KH5ZpqBs5EJVvgHWgMn", // web address people open (used for the QR code and Share)
+ review:"",    // Google review link; blank uses the Maps link
+ about:"We are a shop in Kirmach, near Hanuman Mandir, Kultaran Tirth, Kurukshetra. Find cosmetics, kids’ toys and slippers, ladies’ shoes and slippers and decoration items in one place.",
+ delivery:"",  // e.g. "Free home delivery within 5 km on orders above ₹500"
+ offers:[],    // e.g. [{title:"Diwali sale",text:"10% off on décor",until:"5 Nov"}]
+ newItems:[],  // e.g. [["Block heels","Heels"]]
+ gallery:[],   // shop photos as data URIs
+ theme:"auto",  // auto follows festival dates; or "karwa","diwali","wedding","holi","rakhi","none"
+ tour:{front:"",counter:"",shelves:""}, // shop photos as data URIs
+ reviews:[]    // e.g. [{name:"Priya",text:"Great range",stars:5}]
+};
+var PRICES={};  // e.g. {"Block heels":599}
+// Minimum age in years for each toy (a guide only; please correct to match the real products)
+var AGES={"Teddy bears":1,"Animal toys":1,"Cushion toys":0,"Cartoon characters":3,"Colour blocks":2,"Interlocking sets":5,"Wooden blocks":2,"Puzzle sets":4,"Pull-back cars":3,"Remote control cars":6,"Trucks":3,"Trains":3,"Fashion dolls":5,"Baby dolls":3,"Doll houses":4,"Doll accessories":5,"Ludo & snakes and ladders":5,"Carrom":6,"Card games":6,"Puzzle games":5,"Drums":3,"Keyboards":3,"Xylophones":2,"Toy guitars":3};
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var cur="all",qs="";
+ $("yr").textContent=new Date().getFullYear();
+ if(SHOP.offer){$("ann").textContent=SHOP.offer;$("ann").hidden=false}
+ ["dir","dir2"].forEach(function(i){var a=$(i);a.href=SHOP.maps;a.target="_blank";a.rel="noopener"});
+ if(SHOP.phone){$("call").href="tel:"+SHOP.phone;$("call").hidden=false;$("fab").href="tel:"+SHOP.phone;$("fab").hidden=false;$("phone").textContent=SHOP.phone.replace(/^(\+91)(\d{5})(\d{5})$/,"$1 $2 $3");$("phone").href="tel:"+SHOP.phone;$("phoneRow").hidden=false;$("fp").textContent=$("phone").textContent;$("fp").href="tel:"+SHOP.phone}
+ if(SHOP.address){$("addr").textContent=SHOP.address;$("fa").textContent=SHOP.address}
+ if(SHOP.hours)$("hours").textContent=SHOP.hours;
+ if(SHOP.open){var h=new Date().getHours();$("openNow").textContent=(h>=SHOP.open.from&&h<SHOP.open.to)?"Open now":"Closed right now"}
+ function askLink(n){
+  var m=encodeURIComponent("Hello, I’d like to ask about: "+n);
+  if(SHOP.whatsapp)return "https://wa.me/"+SHOP.whatsapp+"?text="+m;
+  if(SHOP.phone)return "tel:"+SHOP.phone;
+  return "";
+ }
+
+ var S=function(b){return '<svg viewBox="0 0 64 64" aria-hidden="true">'+b+'</svg>'};
+ var shoe=function(c,d){return '<path d="M6 40c0-10 6-14 12-14l8 6 14 4c8 2 18 4 18 12v6H6z" fill="'+c+'"/><rect x="6" y="48" width="52" height="8" rx="3" fill="#fff"/><path d="M26 32l-4 6M32 34l-4 6" stroke="'+d+'" stroke-width="2.5"/>'};
+ var heel=function(c){return '<path d="M8 16l14-2 2 20 28 8c6 2 6 8 0 8H20c-8 0-12-6-12-14z" fill="'+c+'"/><path d="M12 42l-2 16h6l4-16z" fill="#2b1233"/>'};
+ var star='<path d="M52 8l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#f2b632"/>';
+ var ICONS={
+  "Lipsticks":'<rect x="24" y="36" width="16" height="20" rx="2" fill="#7a1f5c"/><rect x="22" y="30" width="20" height="8" fill="#d4a017"/><path d="M26 30V14l8-6 4 6v16z" fill="#e0245e"/>',
+  "Nail polish":'<rect x="20" y="30" width="24" height="26" rx="6" fill="#e0245e"/><rect x="28" y="10" width="8" height="20" rx="2" fill="#2b1233"/><rect x="25" y="28" width="14" height="4" fill="#d4a017"/>',
+  "Kajal & eyeliner":'<g transform="rotate(-40 32 32)"><rect x="26" y="6" width="12" height="42" rx="2" fill="#2b1233"/><rect x="26" y="6" width="12" height="7" fill="#d4a017"/><path d="M26 48h12l-6 11z" fill="#f2c9a0"/><path d="M29.500 54h5l-2.500 5z" fill="#2b1233"/></g>',
+  "Foundation & compact":'<circle cx="32" cy="34" r="23" fill="#d4a017"/><circle cx="32" cy="34" r="17" fill="#f2c9a0"/><path d="M20 26a15 15 0 0 1 12-6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>',
+  "Face wash & creams":'<path d="M22 12h20l-2 36H24z" fill="#1fb5a3"/><rect x="24" y="46" width="16" height="9" rx="1" fill="#fff"/><rect x="26" y="5" width="12" height="8" rx="2" fill="#2b1233"/><circle cx="32" cy="29" r="6" fill="#fff"/>',
+  "Perfumes & deodorants":'<rect x="18" y="26" width="28" height="30" rx="6" fill="#b58be0"/><rect x="26" y="14" width="12" height="12" fill="#2b1233"/><rect x="24" y="8" width="16" height="6" rx="2" fill="#d4a017"/><rect x="24" y="34" width="16" height="10" rx="2" fill="#fff" opacity=".6"/>',
+  "Soft toys":'<circle cx="20" cy="16" r="7" fill="#c68642"/><circle cx="44" cy="16" r="7" fill="#c68642"/><circle cx="32" cy="26" r="15" fill="#c68642"/><ellipse cx="32" cy="47" rx="14" ry="13" fill="#c68642"/><circle cx="26" cy="24" r="2.500" fill="#2b1233"/><circle cx="38" cy="24" r="2.500" fill="#2b1233"/><ellipse cx="32" cy="31" rx="5.500" ry="4" fill="#f2c9a0"/>',
+  "Building blocks":'<rect x="8" y="34" width="24" height="22" rx="2" fill="#e0245e"/><rect x="34" y="34" width="22" height="22" rx="2" fill="#1fb5a3"/><rect x="21" y="10" width="22" height="22" rx="2" fill="#f2b632"/><circle cx="20" cy="45" r="4" fill="#fff" opacity=".6"/><circle cx="45" cy="45" r="4" fill="#fff" opacity=".6"/><circle cx="32" cy="21" r="4" fill="#fff" opacity=".6"/>',
+  "Cars & vehicles":'<rect x="5" y="36" width="54" height="14" rx="5" fill="#e0245e"/><path d="M14 36l6-14h22l10 14z" fill="#e0245e"/><path d="M22 25h8v11H18zM33 25h8l6 11H33z" fill="#d4e4ff"/><circle cx="19" cy="51" r="6.500" fill="#2b1233"/><circle cx="46" cy="51" r="6.500" fill="#2b1233"/>',
+  "Dolls":'<circle cx="32" cy="14" r="9" fill="#f2c9a0"/><path d="M22 15a10 10 0 0 1 20 0v3H22z" fill="#2b1233"/><rect x="29" y="22" width="6" height="6" fill="#f2c9a0"/><path d="M32 26L16 58h32z" fill="#ff5c8a"/>',
+  "Board games":'<rect x="8" y="8" width="48" height="48" rx="9" fill="#fff" stroke="#2b1233" stroke-width="3"/><g fill="#2b1233"><circle cx="21" cy="21" r="4"/><circle cx="43" cy="21" r="4"/><circle cx="32" cy="32" r="4"/><circle cx="21" cy="43" r="4"/><circle cx="43" cy="43" r="4"/></g>',
+  "Musical toys":'<ellipse cx="32" cy="24" rx="23" ry="9" fill="#f2b632"/><path d="M9 24v20c0 5 10 10 23 10s23-5 23-10V24c0 5-10 9-23 9S9 29 9 24z" fill="#e0245e"/><path d="M46 4L30 22M18 4l16 18" stroke="#2b1233" stroke-width="3" stroke-linecap="round"/>',
+  "Flip-flops":'<path d="M24 8c9-2 17 4 17 16 0 18-2 32-9 34s-13-8-13-22c0-12 0-24 5-28z" fill="#1fb5a3"/><path d="M32 24V10M32 24L21 14M32 24l11-10" stroke="#fff" stroke-width="3.500" stroke-linecap="round"/>',
+  "Kids’ sandals":'<path d="M6 44h52c0 9-7 12-15 12H17c-8 0-11-5-11-12z" fill="#2b1233"/><path d="M12 44c0-14 10-22 24-22l14 22z" fill="#ff5c8a"/><rect x="25" y="30" width="16" height="6" rx="2" fill="#fff"/>',
+  "Indoor slippers":'<path d="M6 40c0-12 10-16 22-16s30 4 30 18v6H6z" fill="#b58be0"/><rect x="6" y="48" width="52" height="7" rx="3" fill="#fff"/><ellipse cx="22" cy="35" rx="10" ry="5.500" fill="#fff" opacity=".75"/>',
+  "Casual shoes":shoe("#4a90e2","#fff"),
+  "Heels":heel("#e0245e"),
+  "Flats":'<path d="M6 38c0-8 10-12 20-8 6 3 10 3 16 2 10-2 16 2 16 9 0 7-9 11-26 11S6 47 6 38z" fill="#ff5c8a"/><path d="M40 33l7 5-7 1zM54 33l-7 5 7 1z" fill="#fff"/>',
+  "Sandals":'<path d="M6 48h52l-4 8H10z" fill="#2b1233"/><path d="M12 48c4-18 16-26 32-26l8 26z" fill="#f2b632"/><path d="M24 48c0-9 7-15 16-15" stroke="#e0245e" stroke-width="5" fill="none"/>',
+  "Daily slippers":'<path d="M6 44c0-14 8-26 22-26s30 10 30 26c0 6-5 9-11 9H14c-6 0-8-3-8-9z" fill="#1fb5a3"/><path d="M17 38c8-14 26-14 36 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>',
+  "Sports shoes":shoe("#ff7a00","#2b1233"),
+  "Party footwear":heel("#7a1f5c")+star,
+  "Wall hangings":'<path d="M10 8h44" stroke="#6b3e1a" stroke-width="4" stroke-linecap="round"/><path d="M16 8v20M32 8v28M48 8v20" stroke="#6b3e1a" stroke-width="2"/><circle cx="16" cy="34" r="6" fill="#e0245e"/><circle cx="32" cy="45" r="9" fill="#f2b632"/><circle cx="48" cy="34" r="6" fill="#1fb5a3"/>',
+  "Artificial flowers":'<path d="M32 36v22" stroke="#2f8f4e" stroke-width="3"/><path d="M32 50c8-6 12-4 14-2-4 6-10 6-14 2z" fill="#2f8f4e"/><g fill="#ff5c8a"><circle cx="32" cy="10" r="7"/><circle cx="44" cy="19" r="7"/><circle cx="40" cy="32" r="7"/><circle cx="24" cy="32" r="7"/><circle cx="20" cy="19" r="7"/></g><circle cx="32" cy="23" r="6" fill="#f2b632"/>',
+  "Candles & diyas":'<path d="M6 38h52c0 12-10 18-26 18S6 50 6 38z" fill="#c8641a"/><path d="M32 8c9 9 9 16 0 21-9-5-9-12 0-21z" fill="#f2b632"/><path d="M32 18c4 5 4 7 0 9-4-2-4-4 0-9z" fill="#e0245e"/>',
+  "Photo frames":'<rect x="7" y="9" width="50" height="46" rx="2" fill="#8a5a2b"/><rect x="14" y="16" width="36" height="32" fill="#d4e4ff"/><circle cx="26" cy="26" r="4.500" fill="#f2b632"/><path d="M14 48l13-13 8 8 6-6 9 11z" fill="#2f8f4e"/>',
+  "Showpieces":'<path d="M24 6h16v9c11 6 13 19 8 30-2 8-8 13-16 13s-14-5-16-13c-5-11-3-24 8-30z" fill="#1fb5a3"/><path d="M19 34h26" stroke="#f2b632" stroke-width="4"/>',
+  "Decorative lights":'<path d="M3 12c15 16 43 16 58 0" stroke="#2b1233" stroke-width="2" fill="none"/><g stroke="#2b1233" stroke-width="2"><path d="M14 22v4M26 28v4M38 28v4M50 22v4"/></g><circle cx="14" cy="31" r="5.500" fill="#f2b632"/><circle cx="26" cy="37" r="5.500" fill="#ff5c8a"/><circle cx="38" cy="37" r="5.500" fill="#1fb5a3"/><circle cx="50" cy="31" r="5.500" fill="#b58be0"/>'
+ };
+ function ic(n,fb){return ICONS[n]?S(ICONS[n]):fb}
+
+ var slug=function(n){return n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")};
+ // Optional real photos: PHOTOS["Block heels"]="data:image/jpeg;base64,..." shows that photo instead of the drawing.
+ var PHOTOS={};
+ var VARS={
+  "Lipsticks":["Matte lipsticks","Glossy lipsticks","Liquid lipsticks","Lip balms","Lip liners"],
+  "Nail polish":["Glitter shades","Matte shades","Gel finish","Nail art kits","Nail polish remover"],
+  "Kajal & eyeliner":["Smudge-proof kajal","Liquid eyeliner","Pencil eyeliner","Mascara"],
+  "Foundation & compact":["Compact powder","Liquid foundation","Concealer","Blush & highlighter"],
+  "Face wash & creams":["Face wash","Moisturisers","Sunscreen","Face packs"],
+  "Perfumes & deodorants":["Body sprays","Eau de parfum","Roll-ons","Gift sets"],
+  "Soft toys":["Teddy bears","Animal toys","Cushion toys","Cartoon characters"],
+  "Building blocks":["Colour blocks","Interlocking sets","Wooden blocks","Puzzle sets"],
+  "Cars & vehicles":["Pull-back cars","Remote control cars","Trucks","Trains"],
+  "Dolls":["Fashion dolls","Baby dolls","Doll houses","Doll accessories"],
+  "Board games":["Ludo & snakes and ladders","Carrom","Card games","Puzzle games"],
+  "Musical toys":["Drums","Keyboards","Xylophones","Toy guitars"],
+  "Flip-flops":["Plain flip-flops","Printed flip-flops","Cartoon flip-flops","Soft-sole flip-flops"],
+  "Kids’ sandals":["School sandals","Party sandals","Velcro sandals","Floaters"],
+  "Indoor slippers":["Fur slippers","Soft cotton slippers","Cartoon slippers","Room shoes"],
+  "Casual shoes":["Canvas shoes","Light-up shoes","School shoes","Loafers"],
+  "Heels":["Block heels","Stilettos","Wedges","Kitten heels"],
+  "Flats":["Ballerinas","Loafers","Jutti & mojari","Embellished flats"],
+  "Sandals":["Strappy sandals","Platform sandals","Gladiator sandals","Casual sandals"],
+  "Daily slippers":["Soft slippers","Slides","Bathroom slippers","Home slippers"],
+  "Sports shoes":["Running shoes","Walking shoes","Gym trainers","Sneakers"],
+  "Party footwear":["Embellished heels","Bridal sandals","Glitter flats","Wedding heels"],
+  "Wall hangings":["Wall art","Macramé hangings","Decor mirrors","Torans"],
+  "Artificial flowers":["Flower bunches","Vases with flowers","Garlands","Single stems"],
+  "Candles & diyas":["Scented candles","Diyas","Floating candles","Candle stands"],
+  "Photo frames":["Table frames","Wall frames","Collage frames","Couple frames"],
+  "Showpieces":["Ceramic vases","Figurines","Brass items","Gift showpieces"],
+  "Decorative lights":["String lights","Lanterns","Night lamps","Festive lights"]
+ };
+ // sub menu
+ var mg=$("mg"),menu=$("menu"),btn=$("shopbtn");
+ CATS.forEach(function(c){
+  var d=document.createElement("div");
+  d.innerHTML='<h3><a href="#items" data-c="'+c.id+'">'+c.e+" "+c.name+'</a><button class="tg" type="button" aria-expanded="false" aria-label="Show '+c.name+' items">▾</button></h3><ul>'+
+   c.items.map(function(it){return '<li><a href="#'+slug(it[0])+'" data-c="'+c.id+'" data-i="'+it[0]+'"><i class="th" style="background:var(--'+c.t+')">'+ic(it[0],it[1])+'</i>'+it[0]+'</a></li>'}).join("")+'</ul>';
+  mg.appendChild(d);
+ });
+ function setMenu(o){menu.hidden=!o;btn.setAttribute("aria-expanded",o);$("tabmenu").setAttribute("aria-expanded",o)}
+ var tm=$("tabmenu");
+  btn.onclick=function(e){e.stopPropagation();setMenu(menu.hidden)};
+ tm.onclick=function(e){e.stopPropagation();setMenu(menu.hidden)};
+ mg.addEventListener("click",function(e){var b=e.target.closest(".tg");if(!b)return;var d=b.parentNode.parentNode,o=d.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+ if(SHOP.phone){$("tabcall").href="tel:"+SHOP.phone}
+ else{var tc=$("tabcall");tc.href=SHOP.maps;tc.target="_blank";tc.rel="noopener";tc.innerHTML='<span aria-hidden="true">🗺️</span>Map'}
+ document.addEventListener("click",function(e){if(!menu.hidden&&!menu.contains(e.target))setMenu(false)});
+ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!menu.hidden){setMenu(false);btn.focus()}});
+ // hero bubbles
+ $("bub").innerHTML=CATS.map(function(c){return '<a href="#items" data-c="'+c.id+'"><span>'+c.e+'</span>'+c.name+'</a>'}).join("")+'<a href="#items" data-c="all"><span>✨</span>And more</a>';
+ // sliding strip
+ var st=CATS.map(function(c){return '<span>'+c.e+' '+c.name+'</span>'}).join("");
+ $("tr").innerHTML=st+st+st+st;
+ // chips
+ var chips=$("chips");
+ function mkChip(id,label){var b=document.createElement("button");b.className="chip";b.textContent=label;b.dataset.c=id;b.setAttribute("aria-pressed",id===cur);b.onclick=function(){cur=id;render()};chips.appendChild(b)}
+ mkChip("all","All");CATS.forEach(function(c){mkChip(c.id,c.name)});
+ function render(hit){
+  Array.prototype.forEach.call(chips.children,function(b){b.setAttribute("aria-pressed",b.dataset.c===cur)});
+  var out="",n=0;
+  CATS.forEach(function(c){
+   if(cur!=="all"&&cur!==c.id)return;
+   c.items.forEach(function(it){
+    if(qs&&it[0].toLowerCase().indexOf(qs)<0&&c.name.toLowerCase().indexOf(qs)<0)return;
+    n++;var l=askLink(it[0]),dl=Math.min(n,12)*45;
+    out+='<article class="item'+(hit===it[0]?" hit":"")+'" style="--d:'+dl+'ms"><a class="pic" href="#'+slug(it[0])+'" style="background:var(--'+c.t+')" aria-label="View '+it[0]+'"><span>'+ic(it[0],it[1])+'</span></a><div class="tx"><h3><a href="#'+slug(it[0])+'">'+it[0]+'</a></h3><small>'+c.name+'</small>'+
+     '<a class="ask" href="#'+slug(it[0])+'">View range</a>'+'</div></article>';
+   });
+  });
+  $("grid").innerHTML=out;$("none").hidden=n>0;if(LANG==="hi")applyLang();
+ }
+ $("q").oninput=function(){qs=this.value.trim().toLowerCase();render()};
+ // slide-in on scroll
+ var rv=document.querySelectorAll("#items h2,#items .lead,#visit h2,#visit .lead,.box");
+ if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+  Array.prototype.forEach.call(rv,function(el,i){el.classList.add("rv");if(el.classList.contains("box")&&i%2)el.classList.add("r2");io.observe(el)});
+ }
+ document.addEventListener("click",function(e){
+  var a=e.target.closest("a[data-c]");if(!a)return;if(a.dataset.i){setMenu(false);return}
+  cur=a.dataset.c;qs="";$("q").value="";render(a.dataset.i);setMenu(false);
+ });
+ render();
+ // ---- language, list, sections ----
+ var store={get:function(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+ var LANG=store.get("lang","en"),LIST=store.get("list",[]),SAVED=store.get("saved",[]);
+ var HI={"All items":"सभी सामान","Visit us":"दुकान पर आएं","Shop items ▾":"सामान देखें ▾","Everything for her, the little ones and your home.":"उसके लिए, बच्चों के लिए और आपके घर के लिए सब कुछ।",
+ "Cosmetics, kids’ toys and slippers, ladies’ shoes and slippers, and decoration pieces. Come in and find it all under one roof.":"कॉस्मेटिक्स, बच्चों के खिलौने और चप्पलें, लेडीज़ जूते-चप्पल और सजावट का सामान। आइए, सब कुछ एक ही छत के नीचे पाइए।",
+ "Browse items":"सामान देखें","Get directions":"रास्ता देखें","📞 Call the shop":"📞 दुकान पर कॉल करें","🛍️ Everything under one roof":"🛍️ सब कुछ एक ही जगह","📍 Near Hanuman Mandir, Kultaran Tirth":"📍 हनुमान मंदिर, कुलतारन तीर्थ के पास","📞 Call before you visit":"📞 आने से पहले कॉल करें",
+ "Our items":"हमारा सामान","A look at what you’ll find in the shop. Ask us about any item, or about things not listed here.":"दुकान में मिलने वाले सामान की झलक। किसी भी सामान या यहाँ न दिखे सामान के बारे में हमसे पूछें।","All":"सभी","No items match. Try another word, or ask in the shop.":"कोई सामान नहीं मिला। दूसरा शब्द आज़माएं या दुकान में पूछें।",
+ "Find the shop":"दुकान ढूंढें","Open the map for the fastest route to the shop.":"दुकान तक सबसे तेज़ रास्ते के लिए मैप खोलें।","Opening hours":"खुलने का समय","Hours will be added soon. Please call or message before you travel.":"समय जल्द जोड़ा जाएगा। आने से पहले कृपया कॉल या मैसेज करें।","Open in Google Maps":"गूगल मैप में खोलें","Tap the button below to open the shop on Google Maps.":"गूगल मैप पर दुकान खोलने के लिए नीचे बटन दबाएं।",
+ "Home":"होम","Items":"सामान","Menu":"मेनू","Visit":"दुकान","Call":"कॉल","Map":"मैप","📞 Call now":"📞 अभी कॉल करें","View range":"सारा सामान देखें","📞 Call to order":"📞 कॉल करके ऑर्डर करें","💬 Order on WhatsApp":"💬 व्हाट्सऐप पर ऑर्डर करें",
+ "Looking for a particular style or colour?":"कोई खास डिज़ाइन या रंग चाहिए?","Call the shop and tell us what you need. We’ll tell you what is available.":"दुकान पर कॉल करके बताएं कि आपको क्या चाहिए। हम बताएंगे कि क्या उपलब्ध है।","← Back to all items":"← सभी सामान पर वापस","Styles and colours change often, so ask us what is in stock today.":"डिज़ाइन और रंग अक्सर बदलते रहते हैं, इसलिए पूछ लें कि आज क्या उपलब्ध है।",
+ "+ Add to list":"+ लिस्ट में जोड़ें","✓ Added":"✓ जोड़ा गया","Ask for price":"कीमत पूछें","My list":"मेरी लिस्ट","Enquiry list":"पूछताछ की लिस्ट","Saved items":"सेव किया सामान","Nothing added yet.":"अभी कुछ नहीं जोड़ा।","Send list on WhatsApp":"लिस्ट व्हाट्सऐप पर भेजें","Copy list":"लिस्ट कॉपी करें","Copied":"कॉपी हो गया",
+ "About us":"हमारे बारे में","Offers":"ऑफर","New arrivals":"नया सामान","Photos of our shop":"हमारी दुकान की तस्वीरें","What customers say":"ग्राहक क्या कहते हैं","Home delivery":"होम डिलीवरी","Share with friends":"दोस्तों को भेजें","Send our website to family and friends, or scan the code with your phone.":"हमारी वेबसाइट परिवार और दोस्तों को भेजें, या फ़ोन से कोड स्कैन करें।","Share":"शेयर करें","⭐ Rate us on Google":"⭐ गूगल पर रेटिंग दें","Scan to open our website":"वेबसाइट खोलने के लिए स्कैन करें",
+ "Cosmetics":"कॉस्मेटिक्स","Kids’ toys":"बच्चों के खिलौने","Kids’ slippers":"बच्चों की चप्पलें","Ladies’ shoes & slippers":"लेडीज़ जूते और चप्पलें","Decoration items":"सजावट का सामान","And more":"और भी बहुत कुछ",
+ "Lipsticks":"लिपस्टिक","Nail polish":"नेल पॉलिश","Kajal & eyeliner":"काजल और आईलाइनर","Foundation & compact":"फाउंडेशन और कॉम्पैक्ट","Face wash & creams":"फेस वॉश और क्रीम","Perfumes & deodorants":"परफ्यूम और डियोडरेंट","Soft toys":"सॉफ्ट टॉयज़","Building blocks":"बिल्डिंग ब्लॉक्स","Cars & vehicles":"कारें और गाड़ियाँ","Dolls":"गुड़िया","Board games":"बोर्ड गेम","Musical toys":"म्यूज़िकल खिलौने",
+ "Flip-flops":"फ्लिप-फ्लॉप","Kids’ sandals":"बच्चों की सैंडल","Indoor slippers":"घर की चप्पलें","Casual shoes":"कैज़ुअल जूते","Heels":"हील्स","Flats":"फ्लैट्स","Sandals":"सैंडल","Daily slippers":"रोज़ की चप्पलें","Sports shoes":"स्पोर्ट्स शूज़","Party footwear":"पार्टी फुटवियर","Wall hangings":"वॉल हैंगिंग","Artificial flowers":"आर्टिफिशियल फूल","Candles & diyas":"मोमबत्ती और दीये","Photo frames":"फोटो फ्रेम","Showpieces":"शोपीस","Decorative lights":"सजावटी लाइट्स"};
+ HI[SITE.about]="हम किरमच में हनुमान मंदिर, कुलतारन तीर्थ के पास, कुरुक्षेत्र में स्थित दुकान हैं। यहाँ कॉस्मेटिक्स, बच्चों के खिलौने और चप्पलें, लेडीज़ जूते-चप्पल और सजावट का सामान एक ही जगह मिलता है।";
+ HI[SHOP.offer]="📍 कॉस्मेटिक्स, बच्चों के खिलौने, जूते-चप्पल और सजावट के सामान के लिए दुकान पर आएं, या आज क्या उपलब्ध है यह जानने के लिए कॉल करें।";
+ HI[SHOP.address]="VPO किरमच, ज़िला कुरुक्षेत्र, हरियाणा 136119। हनुमान मंदिर, कुलतारन तीर्थ के पास।";
+ Object.assign(HI,{"🎁 Gift ideas":"🎁 उपहार के आइडिया","Ideas for gifts. Tell us your budget and we’ll help you choose.":"उपहार के आइडिया। अपना बजट बताएं, हम चुनने में मदद करेंगे।","🎁 Ask us to make a gift set":"🎁 हमसे गिफ्ट सेट बनवाएं",
+ "Refer a friend":"दोस्त को बताएं","Share our shop with a friend. When your friend shows this message in the shop, they get a small gift.":"अपने दोस्त को हमारी दुकान भेजें। जब आपका दोस्त यह मैसेज दुकान में दिखाएगा, उसे एक छोटा उपहार मिलेगा।","Send to a friend on WhatsApp":"दोस्त को व्हाट्सऐप पर भेजें",
+ "New stock updates":"नए सामान की जानकारी","Want to know when new stock arrives? Send us a message on WhatsApp and we’ll add you to our updates. We message only people who ask.":"नया सामान आने पर जानना चाहते हैं? हमें व्हाट्सऐप पर मैसेज करें, हम आपको अपनी सूची में जोड़ लेंगे। हम सिर्फ़ उन्हीं को मैसेज करते हैं जो खुद कहते हैं।","Tell me when new stock arrives":"नया सामान आए तो बताएं",
+ "Shop tour":"दुकान की सैर","Find us in VPO Kirmach, near Hanuman Mandir, Kultaran Tirth, Kurukshetra. Open the map, come to the temple, and you will find us nearby.":"हमें VPO किरमच में, हनुमान मंदिर, कुलतारन तीर्थ के पास, कुरुक्षेत्र में ढूंढें। मैप खोलें, मंदिर तक आएं, और हम पास में ही मिलेंगे।","Shop front":"दुकान का बाहरी हिस्सा","Counter":"काउंटर","Shelves":"शेल्फ़","Photo coming soon":"फोटो जल्द आएगी",
+ "Choose your child’s age. Ages are a guide, so please check the pack and ask us if you are not sure.":"अपने बच्चे की उम्र चुनें। उम्र सिर्फ़ एक गाइड है, इसलिए पैक देख लें और पक्का न हो तो हमसे पूछें।","All ages":"सभी उम्र","0–2 years":"0–2 साल","3–5 years":"3–5 साल","6+ years":"6+ साल"});
+ function tr(s){var k=s.trim();if(HI[k])return HI[k];var am=k.match(/^Ages (\d+)\+$/);if(am)return "उम्र "+am[1]+"+ साल";var m=k.match(/^(\S+) (.+)$/);if(m&&HI[m[2]])return m[1]+" "+HI[m[2]];if(k.indexOf("More in ")===0){var r=k.slice(8);return "और देखें: "+(HI[r]||r)}return null}
+ function applyLang(){
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n,a=[];
+  while(n=w.nextNode()){var p=n.parentNode.nodeName;if(p!=="SCRIPT"&&p!=="STYLE")a.push(n)}
+  a.forEach(function(n){
+   if(n._en===undefined){if(!n.nodeValue.trim())return;n._en=n.nodeValue}
+   if(LANG==="hi"){var h=tr(n._en);if(h!==null)n.nodeValue=n._en.replace(n._en.trim(),h)}
+   else if(n.nodeValue!==n._en)n.nodeValue=n._en;
+  });
+  $("q").placeholder=LANG==="hi"?"सामान खोजें":"Search items";
+  document.documentElement.lang=LANG==="hi"?"hi":"en";
+  $("lang").textContent=LANG==="hi"?"English":"हिन्दी";
+ }
+ $("lang").onclick=function(){LANG=LANG==="hi"?"en":"hi";store.set("lang",LANG);applyLang()};
+ // enquiry list + saved
+ function on(a,x){return a.indexOf(x)>=0}
+ function hrt(x){var o=on(SAVED,x);return '<button class="hrt'+(o?' on':'')+'" type="button" data-s="'+x+'" aria-label="Save">'+(o?'♥':'♡')+'</button>'}
+ function addb(x){var o=on(LIST,x);return '<button class="add'+(o?' on':'')+'" type="button" data-l="'+x+'">'+(o?'✓ Added':'+ Add to list')+'</button>'}
+ function prc(v){return PRICES[v]?'<b class="pr">₹'+PRICES[v]+'</b>':'<span class="pr nope">Ask for price</span>'}
+ function save(){store.set("list",LIST);store.set("saved",SAVED);$("lcount").textContent=LIST.length+SAVED.length}
+ function syncBtns(){
+  Array.prototype.forEach.call(document.querySelectorAll(".add"),function(b){var o=on(LIST,b.dataset.l);b.classList.toggle("on",o);b.textContent=o?"✓ Added":"+ Add to list"});
+  Array.prototype.forEach.call(document.querySelectorAll(".hrt"),function(b){var o=on(SAVED,b.dataset.s);b.classList.toggle("on",o);b.textContent=o?"♥":"♡"});
+ }
+ function listText(){return "Hello, I’m interested in these items from your shop:\n"+LIST.map(function(x,i){return (i+1)+". "+x}).join("\n")}
+ function drawerRender(){
+  function rows(a,k){return a.length?a.map(function(x,i){return '<li><span>'+x+'</span><button type="button" data-rm="'+k+'" data-i="'+i+'" aria-label="Remove">✕</button></li>'}).join(""):'<li class="e">Nothing added yet.</li>'}
+  var num=(SHOP.whatsapp||SHOP.phone||"").replace(/\D/g,"");
+  $("dbody").innerHTML='<h3>Enquiry list</h3><ul>'+rows(LIST,"l")+'</ul>'+(LIST.length?'<div class="dact"><a class="btn" target="_blank" rel="noopener" href="https://wa.me/'+num+'?text='+encodeURIComponent(listText())+'">Send list on WhatsApp</a><button class="btn alt" id="dcopy" type="button">Copy list</button></div>':'')+'<h3>Saved items</h3><ul>'+rows(SAVED,"s")+'</ul>';
+  applyLang();
+ }
+ document.addEventListener("click",function(e){
+  var t=e.target,a=t.closest(".add"),h=t.closest(".hrt"),r=t.closest("[data-rm]"),c=t.closest("#dcopy");
+  if(a||h||r){
+   if(a){var i=LIST.indexOf(a.dataset.l);if(i<0)LIST.push(a.dataset.l);else LIST.splice(i,1)}
+   if(h){var j=SAVED.indexOf(h.dataset.s);if(j<0)SAVED.push(h.dataset.s);else SAVED.splice(j,1)}
+   if(r){(r.dataset.rm==="l"?LIST:SAVED).splice(+r.dataset.i,1)}
+   save();syncBtns();drawerRender();return;
+  }
+  if(c){try{navigator.clipboard.writeText(listText());c.textContent="Copied";applyLang()}catch(x){}}
+ });
+ $("lbtn").onclick=function(){$("drawer").hidden=false;drawerRender();$("dclose").focus()};
+ $("dclose").onclick=function(){$("drawer").hidden=true};
+ document.addEventListener("keydown",function(e){if(e.key==="Escape")$("drawer").hidden=true});
+ // age guide
+ function agb(v){return AGES[v]===undefined?"":'<span class="age">Ages '+AGES[v]+'+</span>'}
+ function ageBar(){return '<p class="lead" style="margin:0 0 10px">Choose your child’s age. Ages are a guide, so please check the pack and ask us if you are not sure.</p><div class="tools"><button class="chip" type="button" data-age="all" aria-pressed="true">All ages</button><button class="chip" type="button" data-age="0" aria-pressed="false">0–2 years</button><button class="chip" type="button" data-age="3" aria-pressed="false">3–5 years</button><button class="chip" type="button" data-age="6" aria-pressed="false">6+ years</button></div>'}
+ document.addEventListener("click",function(e){
+  var f=e.target.closest("[data-age]");if(!f)return;
+  Array.prototype.forEach.call(f.parentNode.children,function(b){b.setAttribute("aria-pressed",b===f)});
+  var a=f.dataset.age;
+  Array.prototype.forEach.call(document.querySelectorAll("#vgrid .item"),function(el){var m=el.dataset.min===""?-1:+el.dataset.min;el.hidden=!(a==="all"||m<0||(a==="0"&&m<=2)||(a==="3"&&m>=3&&m<=5)||(a==="6"&&m>=6))});
+ });
+ // festival themes (dates checked for 2026-27; update each year)
+ var TH=[
+  {id:"karwa",f:"2026-10-18",t:"2026-10-29",n:"Karwa Chauth",c1:"#b3122a",c2:"#e8452c",h:"linear-gradient(135deg,#ffd6d6,#ffe3a8 55%,#ffc9c9)",
+   b:"🌙 Karwa Chauth special: shringar and gifts for her, and diyas for the home.",bh:"🌙 करवा चौथ स्पेशल: उनके लिए श्रृंगार और उपहार, और घर के लिए दीये।",
+   g:["💄 Shringar: lipstick, nail polish and kajal","🌸 Gift for her: perfume and compact","🪔 Diyas, candles and decoration for the home"],gh:["💄 श्रृंगार: लिपस्टिक, नेल पॉलिश और काजल","🌸 उनके लिए उपहार: परफ्यूम और कॉम्पैक्ट","🪔 घर के लिए दीये, मोमबत्तियाँ और सजावट"]},
+  {id:"diwali",f:"2026-10-30",t:"2026-11-11",n:"Diwali",c1:"#b9400b",c2:"#d9480f",h:"linear-gradient(135deg,#ffe8a3,#ffd1a1 55%,#ffc2d4)",
+   b:"🪔 Happy Diwali! Décor, diyas, lights and gifts for the whole family.",bh:"🪔 दिवाली की शुभकामनाएं! पूरे परिवार के लिए सजावट, दीये, लाइट्स और उपहार।",
+   g:["🪔 Diwali décor: diyas, candles and decorative lights","🎁 Gifts for her: cosmetics and footwear","🧸 Gifts for kids: toys and slippers"],gh:["🪔 दिवाली सजावट: दीये, मोमबत्तियाँ और सजावटी लाइट्स","🎁 उनके लिए उपहार: कॉस्मेटिक्स और जूते-चप्पल","🧸 बच्चों के लिए उपहार: खिलौने और चप्पलें"]},
+  {id:"wedding",f:"2026-11-12",t:"2027-02-28",n:"Wedding season",c1:"#7a1f5c",c2:"#b4123f",h:"linear-gradient(135deg,#f3d9ff,#ffd9e2 55%,#ffe7c2)",
+   b:"💍 Wedding season: cosmetics, footwear and décor for the bride, family and guests.",bh:"💍 शादी का सीज़न: दुल्हन, परिवार और मेहमानों के लिए कॉस्मेटिक्स, जूते-चप्पल और सजावट।",
+   g:["💄 For the bride: cosmetics and party footwear","👡 For guests: footwear and gifts","💐 Décor: artificial flowers, frames and lights"],gh:["💄 दुल्हन के लिए: कॉस्मेटिक्स और पार्टी फुटवियर","👡 मेहमानों के लिए: जूते-चप्पल और उपहार","💐 सजावट: आर्टिफिशियल फूल, फ्रेम और लाइट्स"]},
+  {id:"holi",f:"2027-03-08",t:"2027-03-22",n:"Holi",c1:"#7c3aed",c2:"#db2777",h:"linear-gradient(135deg,#ffd1e8,#d4f5ff 55%,#fff3a8)",
+   b:"🎨 Happy Holi! Fun for the kids, care for her and colour for your home.",bh:"🎨 होली मुबारक! बच्चों के लिए मस्ती, उनके लिए देखभाल और घर के लिए रंग।",
+   g:["🧸 Fun for kids: toys and games","🧴 After-Holi care: face wash and creams","🖼️ Bright décor for the home"],gh:["🧸 बच्चों की मस्ती: खिलौने और गेम","🧴 होली के बाद देखभाल: फेस वॉश और क्रीम","🖼️ घर के लिए रंग-बिरंगी सजावट"]},
+  {id:"rakhi",f:"2027-08-03",t:"2027-08-17",n:"Raksha Bandhan",c1:"#be185d",c2:"#e11d48",h:"linear-gradient(135deg,#ffd6e7,#fff0b3 55%,#ffdede)",
+   b:"🧵 Raksha Bandhan: gifts for sisters, brothers and little ones.",bh:"🧵 रक्षा बंधन: बहनों, भाइयों और छोटे बच्चों के लिए उपहार।",
+   g:["💅 For sisters: cosmetics and footwear","🧸 For little brothers and sisters: toys","🏺 For home: showpieces and décor"],gh:["💅 बहनों के लिए: कॉस्मेटिक्स और जूते-चप्पल","🧸 छोटे भाई-बहनों के लिए: खिलौने","🏺 घर के लिए: शोपीस और सजावट"]}
+ ];
+ function theme(){
+  var d=new Date(),ds=d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2),id=SITE.theme||"auto",t=null;
+  TH.forEach(function(x){if(id==="auto"?(ds>=x.f&&ds<=x.t):id===x.id)t=x});
+  if(!t)return;
+  var r=document.documentElement.style;r.setProperty("--cta1",t.c1);r.setProperty("--cta2",t.c2);
+  if(!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches))r.setProperty("--hero",t.h);
+  HI[t.b]=t.bh;$("ann").textContent=t.b;$("ann").hidden=false;
+  $("giftG").innerHTML=t.g.map(function(g,i){HI[g]=t.gh[i];return '<div class="oc"><p><b>'+g+'</b></p></div>'}).join("");$("gifts").hidden=false;
+  var num=(SHOP.whatsapp||SHOP.phone||"").replace(/\D/g,"");
+  $("giftBtn").href="https://wa.me/"+num+"?text="+encodeURIComponent("Hello, I’d like help choosing a gift set for "+t.n+".");
+ }
+ // optional sections
+ function secs(){
+  var o=SITE.offers,nn=SITE.newItems,g=SITE.gallery,rv=SITE.reviews;
+  if(o.length){$("offersG").innerHTML=o.map(function(x){return '<div class="oc"><h3>'+x.title+'</h3><p>'+x.text+'</p>'+(x.until?'<small>Till '+x.until+'</small>':"")+'</div>'}).join("");$("offers").hidden=false}
+  if(nn.length){$("newG").innerHTML=nn.map(function(x){return '<a class="item" href="#'+slug(x[1])+'"><div class="pic" style="background:var(--t1)">'+ic(x[1],"")+'</div><div class="tx"><h3>'+x[0]+'</h3><small>'+x[1]+'</small></div></a>'}).join("");$("newa").hidden=false}
+  if(g.length){$("galG").innerHTML=g.map(function(u){return '<img src="'+u+'" alt="Our shop" loading="lazy">'}).join("");$("gal").hidden=false}
+  if(rv.length){$("revG").innerHTML=rv.map(function(x){return '<div class="rc"><div class="stars" aria-hidden="true">'+"★★★★★".slice(0,x.stars||5)+'</div><p>'+x.text+'</p><h3>'+x.name+'</h3></div>'}).join("");$("rev").hidden=false}
+  $("tourG").innerHTML=[["front","Shop front"],["counter","Counter"],["shelves","Shelves"]].map(function(x){var u=SITE.tour[x[0]];return '<figure class="slot">'+(u?'<img src="'+u+'" alt="'+x[1]+'" loading="lazy">':'<span>📷<br>Photo coming soon</span>')+'<figcaption>'+x[1]+'</figcaption></figure>'}).join("");
+  $("tourMap").href=SHOP.maps;
+  var wn=(SHOP.whatsapp||SHOP.phone||"").replace(/\D/g,"");
+  function msg(en,hi){return LANG==="hi"?hi:en}
+  $("referBtn").onclick=function(){
+   var m=msg("Hi! Visit Radhika Butique & Ladies Collection (Kirmach, near Hanuman Mandir, Kultaran Tirth) for cosmetics, kids’ toys, footwear and décor. Show this message in the shop and get a small gift! "+SITE.site,"नमस्ते! राधिका बुटीक एंड लेडीज़ कलेक्शन (किरमच, हनुमान मंदिर, कुलतारन तीर्थ के पास) पर कॉस्मेटिक्स, बच्चों के खिलौने, जूते-चप्पल और सजावट का सामान मिलता है। यह मैसेज दुकान में दिखाइए और एक छोटा उपहार पाइए! "+SITE.site);
+   window.open("https://wa.me/?text="+encodeURIComponent(m),"_blank");
+  };
+  $("updBtn").onclick=function(e){e.preventDefault();window.open("https://wa.me/"+wn+"?text="+encodeURIComponent(msg("Hello, please add me to your new stock updates.","नमस्ते, कृपया मुझे अपने नए सामान की जानकारी वाली सूची में जोड़ लें।")),"_blank")};
+  $("aboutT").textContent=SITE.about;
+  if(SITE.delivery){$("deliv").textContent=SITE.delivery;$("delivB").hidden=false}
+  $("rate").href=SITE.review||SHOP.maps;
+  if(window.QRCode){try{new QRCode($("qr"),{text:SITE.site,width:150,height:150})}catch(x){$("qr").textContent=SITE.site}}else{$("qr").textContent=SITE.site}
+  $("shareBtn").onclick=function(){
+   var d={title:"Radhika Butique & Ladies Collection",text:"Cosmetics, kids’ toys, footwear & décor in Kirmach, Kurukshetra",url:SITE.site};
+   function wa(){window.open("https://wa.me/?text="+encodeURIComponent(d.text+" "+d.url),"_blank")}
+   try{if(navigator.share){navigator.share(d).catch(wa)}else{wa()}}catch(x){wa()}
+  };
+ }
+ // cosmetic decorations
+ var fl=[["Lipsticks","f1"],["Nail polish","f2"],["Perfumes & deodorants","f3"],["Foundation & compact","f4"],["Kajal & eyeliner","f5"]];
+ $("fl").innerHTML=fl.map(function(x){return '<i class="f '+x[1]+'">'+ic(x[0],"")+'</i>'}).join("")+'<b class="sp s1">✦</b><b class="sp s2">✦</b><b class="sp s3">✦</b>';
+ var hf=["Lipsticks","Nail polish","Perfumes & deodorants","Foundation & compact","Kajal & eyeliner","Face wash & creams","Lipsticks","Nail polish"];
+ $("hf").innerHTML=hf.map(function(n,i){return '<i style="left:'+(6+i*12)+'%;bottom:-50px;animation-duration:'+(12+(i%4)*3)+'s;animation-delay:-'+(i*2.3)+'s">'+ic(n,"")+'</i>'}).join("");
+ document.querySelector(".lm").innerHTML=ic("Lipsticks","R");
+ // item pages
+ var main=$("top"),pg=$("page");
+ function openItem(it,c){
+  var vs=VARS[it[0]]||["Assorted "+it[0].toLowerCase()];
+  var cards=vs.map(function(v,i){
+   var l=askLink(it[0]+": "+v),im=PHOTOS[v];
+   return '<article class="item" data-min="'+(AGES[v]===undefined?"":AGES[v])+'" style="--d:'+(i*70)+'ms"><div class="pic v" style="background:var(--'+c.t+');--h:'+(i*38)+'deg">'+(im?'<img src="'+im+'" alt="'+v+'">':ic(it[0],it[1]))+hrt(it[0]+": "+v)+'</div><div class="tx"><h3>'+v+'</h3><small>'+it[0]+'</small>'+agb(v)+prc(v)+addb(it[0]+": "+v)+
+    (l?'<a class="ask" href="'+l+'" target="_blank" rel="noopener">'+(SHOP.whatsapp?"💬 Order on WhatsApp":"📞 Call to order")+'</a>':'<span class="ask muted">Ask in the shop</span>')+'</div></article>';
+  }).join("");
+  var more=c.items.filter(function(x){return x[0]!==it[0]}).map(function(x){return '<a class="chip" href="#'+slug(x[0])+'">'+x[0]+'</a>'}).join("");
+  pg.innerHTML='<div class="wrap pg"><nav class="crumb" aria-label="Breadcrumb"><a href="#top">Home</a> › <a href="#items">Items</a> › '+c.name+' › '+it[0]+'</nav>'+
+   '<div class="ban" style="background:var(--'+c.t+')"><div class="bi">'+ic(it[0],it[1])+'</div><div><h1>'+it[0]+'</h1><p>Styles and colours change often, so ask us what is in stock today.</p></div></div>'+
+   (c.id==="toys"?ageBar():"")+'<div class="items" id="vgrid">'+cards+'</div><div class="help"><div><h3>Looking for a particular style or colour?</h3><p>Call the shop and tell us what you need. We’ll tell you what is available.</p></div>'+(SHOP.phone?'<a class="btn" href="tel:'+SHOP.phone+'">📞 Call now</a>':"")+'</div><h2>More in '+c.name+'</h2><div class="tools">'+more+'</div><p style="margin-top:26px"><a class="btn alt" href="#items">← Back to all items</a></p></div>';
+ }
+ function route(){
+  var h=decodeURIComponent(location.hash.slice(1)),f=null,fc=null;
+  CATS.forEach(function(c){c.items.forEach(function(it){if(slug(it[0])===h){f=it;fc=c}})});
+  if(f){openItem(f,fc);main.hidden=true;pg.hidden=false;setMenu(false);window.scrollTo(0,0);document.title=f[0]+" | Radhika Butique & Ladies Collection"}
+  else{pg.hidden=true;main.hidden=false;document.title="Radhika Butique & Ladies Collection";var el=h&&document.getElementById(h);if(el)el.scrollIntoView();else if(!h)window.scrollTo(0,0)}
+ }
+ window.addEventListener("hashchange",function(){route();syncBtns();applyLang()});
+ route();secs();theme();save();drawerRender();applyLang();
+})();
+</script>
+</body>
+</html>
